@@ -76,8 +76,8 @@ with open(budget_csv) as csv_file:
     # open financial analysis and print results to terminal
     with open(output_path) as show_file:
         print(show_file.read())
-        show_file.open()
         
+
 
 
 

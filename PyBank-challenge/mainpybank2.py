@@ -52,16 +52,6 @@ with open(budget_csv) as csv_file:
     # formula for average change
     avg_change = round(total_change / (months - 1), 2)      
 
-    # print outputs in terminal
-    #print("------------------")
-    #print("Financial Analysis")
-    #print("------------------")
-    #print("Total months: ", months)
-    #print("Total: $", profit_loss_net)         
-    #print("Average Change: $", avg_change)
-    #print("Greatest Increase in Profits:", month_of_max_increase,"($",greatest_increase,")")
-    #print("Greatest Decrease in Profits:", month_of_max_decrease, "($", greatest_decrease,")")
-
     # export analysis to file
     #set filepath 
     output_path = os.path.join('Analysis', 'Analysis.txt') 

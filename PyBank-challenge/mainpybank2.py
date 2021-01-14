@@ -57,11 +57,12 @@ with open(budget_csv) as csv_file:
     output_path = os.path.join('Analysis', 'Analysis.txt') 
     with open(output_path, 'w') as txtfile: 
         txtfile.write("Financial Analysis \n")
-        txtfile.write("------------------ \n")
+        txtfile.write("-------------------\n")
         txtfile.write(f"Total Months: {months}\n")
         txtfile.write(f"Average Change: ${avg_change}\n")
         txtfile.write(f"Greatest Increase in Profits: {month_of_max_increase} (${greatest_increase})\n")
         txtfile.write(f"Greatest Decrease in Profits: {month_of_max_decrease} (${greatest_decrease})\n")
+        txtfile.write("----------------------------------------------------------------------------\n")
 
     # open financial analysis and print results to terminal
     with open(output_path) as show_file:

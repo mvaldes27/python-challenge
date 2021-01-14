@@ -51,7 +51,7 @@ with open(election_csv) as csv_file:
     # create dictionary of candidates and vote totals
     vote_dict = {'Khan': Khan_votes, 'Correy': Correy_votes , 'Li' : Li_votes, 'oTooley': oTooley_votes}
 
-    # calculate winner based on popular votes
+    # calculate popular vote value
     max_votes = max(vote_dict.values())
 
     # get matching key for max_votes to find the winner
@@ -60,42 +60,23 @@ with open(election_csv) as csv_file:
     for key in vote_dict: 
         winner = max(vote_dict, key=vote_dict.get)
 
+    # export analysis to file
+    #set filepath 
+    output_path = os.path.join('Analysis', 'Election_Results.txt') 
+    with open(output_path, 'w') as txtfile: 
+        txtfile.write("Election Results \n")
+        txtfile.write("----------------------\n")
+        txtfile.write(f"Total Votes: {total_votes}\n")
+        txtfile.write("----------------------\n")
+        txtfile.write(f"Khan: {Khan_percent}% ({Khan_votes}) \n")
+        txtfile.write(f"Correy: {Correy_percent}% ({Correy_votes}) \n")
+        txtfile.write(f"Li: {Li_percent}% ({Li_votes}) \n")
+        txtfile.write(f"O'Tooley: {oTooley_percent}% ({oTooley_votes}) \n")
+        txtfile.write("----------------------\n")
+        txtfile.write(f"Winner : {winner}\n")
+        txtfile.write("----------------------\n")
 
-    
-
-        
-
-
-
-    
-
-        
-        
-         
-            
-            
-
-             
-
-    
-    
-    print(total_votes)
-    print(candidates)
-    print(Khan_votes)
-    print(Correy_votes)
-    print(Li_votes)
-    print(oTooley_votes)
-    print(Khan_percent)
-    print(Correy_percent)
-    print(Li_percent)
-    print(oTooley_percent)
-
-    print(vote_dict)
-
-    print(max_votes)
-    print(winner)
-
-
-
-    
-
+    #print results to terminal
+    # open financial analysis and print results to terminal
+    with open(output_path) as show_file:
+        print(show_file.read())
